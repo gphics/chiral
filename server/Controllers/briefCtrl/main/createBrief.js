@@ -20,7 +20,7 @@ module.exports = async (req, res, next) => {
     if (!passcode) {
       return next(errGen("invalid passcode"));
     }
-    if (passcode.isUsed) {
+    if (passcode.isUsed && passcode.isLocked) {
       return next(errGen("passcode is already used"));
     }
     const {
@@ -82,7 +82,7 @@ module.exports = async (req, res, next) => {
     passcode.isUsed = true;
     passcode.projectId = project._id;
     await passcode.save();
-    return res.json({ data: { id: brief._id }, err: null });
+    return res.json({ data: {_id:brief._id}, err: null });
   } catch (error) {
     return next(errGen(error.message));
   }

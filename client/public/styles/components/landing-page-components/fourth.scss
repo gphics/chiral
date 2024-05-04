@@ -1,0 +1,54 @@
+@use "../../utils/colors.scss" as colors;
+@use "../../utils/flexing.scss" as flexer;
+@use "../../utils/btnStyle.scss" as btnStyle;
+@use "../../utils/mediaStyle.scss" as mediaStyle;
+
+
+.fourth-component {
+    width: 98%;
+    margin: 10px auto;
+
+    h2 {
+        color: colors.$secondary-color;
+        text-align: center;
+    }
+
+    section {
+        @include flexer.flexMixin {
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        article {
+            width: 40%;
+            height: 150px;
+            background-color: colors.$secondary-color;
+            margin: 10px auto;
+            font-size: .8em;
+            border-radius: 5px;
+            padding: 0 10px;
+
+            h4 {
+                margin: 10px 0;
+            }
+
+            p {
+                text-align: center;
+            }
+
+            &:hover {
+                transform: scale(1.008);
+            }
+
+            @include flexer.flexMixin {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            @include mediaStyle.mediaStyle {
+                width: 98%;
+            }
+        }
+    }
+}

@@ -27,7 +27,7 @@ const passcodeCtrl = [
   {
     action: getPasscode,
     mid: null,
-    url: "/:id",
+    url: "/:key",
     method: "get",
   },
   {

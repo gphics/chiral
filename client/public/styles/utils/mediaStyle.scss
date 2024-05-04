@@ -1,0 +1,7 @@
+
+
+@mixin mediaStyle{
+    @media (max-width:760px) {
+        @content()
+    }
+}

@@ -5,8 +5,8 @@ const schema = new mongoose.Schema(
     key: { type: String, required: true },
     isUsed: { type: Boolean, default: false },
     isLocked: { type: Boolean, default: false },
-    projectId: { type: mongoose.Schema.Types.ObjectId, ref: "portfolio" },
-  },
+    projectId: { type: mongoose.Schema.Types.ObjectId, ref: "project" },
+  }, 
   { timestamps: true }
 );
 

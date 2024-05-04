@@ -1,0 +1,86 @@
+@use "../../utils/colors.scss" as colors;
+@use "../../utils/flexing.scss" as flexer;
+@use "../../utils/btnStyle.scss" as btnStyle;
+@use "../../utils/mediaStyle.scss" as mediaStyle;
+
+.first-component {
+    // background-color: red;
+    height: 300px;
+
+    @include flexer.flexMixin() {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    ;
+    margin: 10px 0;
+
+    @include mediaStyle.mediaStyle {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    ;
+
+    article {
+        width: 45%;
+        height: 100%;
+        font-size: .9em;
+
+        @include flexer.flexMixin() {
+            flex-direction: column;
+            justify-content: center;
+        }
+h2{
+        color: colors.$secondary-color;
+}
+        span {
+            display: block;
+            margin: 5px 0;
+        }
+
+        p {
+            margin: 5px 0;
+            ;
+        }
+
+        a {
+            width: max-content;
+
+            @include btnStyle.btn() {
+                margin-top: 10px;
+            }
+        }
+
+        @include mediaStyle.mediaStyle {
+            width: 100%;
+            font-size: .8em;
+            margin-bottom: 10px;
+        }
+    }
+
+    .img-holder {
+        height: 100%;
+        width: 45%;
+
+        @include flexer.flexMixin() {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            transform: scale(1.3);
+
+            &:hover {
+                transform: scale(1.4);
+            }
+        }
+
+        @include mediaStyle.mediaStyle {
+            width: 100%;
+            margin: 5px 0;
+        }
+    }
+}

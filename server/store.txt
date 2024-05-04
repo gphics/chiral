@@ -1,0 +1,15 @@
+
+my projects:
+Design:
+    chiral
+    kingsFashion
+    Reldrop
+    HiConnect
+    Sandy
+    Silver Tadpole
+    gphics Design
+
+Software:
+    feed-master : https://feed-master-client.vercel.app/landing-page
+    Track-It : https://trackit-gb3z.onrender.com/
+    kingsFashion : https://kingfashion.vercel.app/

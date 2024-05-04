@@ -1,0 +1,34 @@
+@use "./utils/colors.scss" as colors;
+@use "./utils/loading-component.scss";
+@use "./utils/navigation-component.scss";
+@use "./utils/footer-component.scss";
+@use "./utils/not-found-page.scss";
+@use "./pages/page-export.scss";
+@font-face {
+  font-family: RegularFont;
+  src: url("../assets/fonts/Montserrat-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: all .5s;
+  font-family: RegularFont, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+main{
+  width:97%;
+  margin:0 auto;
+  height: calc(100vh - 235px);
+  overflow-y: scroll;
+}
+
+html,
+body {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
+  background-color: colors.$primary-color;
+  color: colors.$white;
+}

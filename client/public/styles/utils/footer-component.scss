@@ -1,0 +1,74 @@
+@use "./colors.scss" as colors;
+@use "./flexing.scss" as flexer;
+
+
+.footer-component {
+    margin-top: 5px;
+    background-color: colors.$secondary-color;
+    width: 100%;
+    height: 160px;
+    padding: 0px 0px 5px 5%;
+    color: colors.$primary-color;
+    font-size: .8em;
+
+    @include flexer.flexMixin {
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .logo-holder {
+        height: 40px;
+        margin: 0;
+
+        @include flexer.flexMixin {
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+
+    }
+
+    h3 {
+        color: colors.$white;
+    }
+
+    p {
+        font-weight: 800;
+        height: 20%;
+        @include flexer.flexMixin{align-items: center};
+      
+        span {
+            margin-left: 1.5%;
+            font-size: .9em;
+
+        }
+    }
+/*
+    .icon-holder {
+
+        width: 30%;
+        color: colors.$primary-color;
+        max-width: 60px;
+        padding-left: 1%;
+
+        @include flexer.flexMixin {
+            justify-content: space-between;
+        }
+
+        .icon {
+            transform: scale(2.05);
+        }
+                                display: none;
+    }
+*/
+    .icon {
+        color: colors.$primary-color;
+        transform: scale(2);
+
+        &:hover {
+            transform: scale(2.05);
+            color: colors.$white;
+        }
+    }
+}

@@ -3,14 +3,13 @@ const mongoose = require("mongoose");
 const schema = new mongoose.Schema(
   {
     brief: {
-      required: true,
       type: mongoose.Schema.Types.ObjectId,
       ref: "brief",
     },
     name: { type: String, required: true },
-    type: { type: String, required: true, enum: ["design", "webApp"] },
+    type: { type: String, required: true, enum: ["design", "software"] },
     cost: { type: Number, default: 0 },
-    webUrl: { type: Array },
+    webUrls: { type: Array },
     designs: { type: Array },
     techStacks: { type: Array },
     deploymentPlatforms: { type: Array },

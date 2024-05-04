@@ -3,10 +3,10 @@ const mongoose = require("mongoose");
 const schema = new mongoose.Schema(
   {
     brandName: { type: String, required: true },
-    brandServices: { type: String, required: true },
+    brandServices: { type: Array, required: true },
     brandContact: { type: Number, required: true },
-    brandColors: { type: String, default: null },
-    brandValues: { type: Number, default: null },
+    brandColors: { type: Array, default: null },
+    brandValues: { type: Array, default: null },
     brandEmail: { type: String, required: true },
     brandLocation: { type: String, required: true },
     brandDescription: { type: String, required: true },

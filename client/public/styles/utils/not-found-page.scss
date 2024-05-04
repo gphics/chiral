@@ -1,0 +1,17 @@
+@use "./colors.scss" as colors;
+@use "./flexing.scss" as flexer;
+@use "./btnStyle.scss" as btnStyle;
+
+.not-found-page {
+    @include flexer.flexMixin() {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a {
+        @include btnStyle.btn() {
+            margin-top: 20px;
+        }
+    }
+}

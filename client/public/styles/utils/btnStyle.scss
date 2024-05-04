@@ -1,0 +1,23 @@
+@use "./colors.scss" as colors;
+
+@mixin btn() {
+    text-decoration: none;
+    text-align: center;
+    color: colors.$primary_color;
+    background-color: colors.$secondary_color;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    outline: none;
+    border: none;
+
+    &:hover {
+        transform: scale(1.02);
+        color: colors.$white;
+        background: colors.$bg-gradient;
+        background-color: colors.$secondary_color;
+    }
+
+    @content;
+}

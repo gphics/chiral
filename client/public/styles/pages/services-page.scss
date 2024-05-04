@@ -1,0 +1,24 @@
+@use "../utils/colors.scss" as colors;
+@use "../utils/flexing.scss" as flexer;
+
+
+.services-page{
+    @include flexer.flexMixin{
+        flex-direction: column;
+        justify-content: space-around;
+    };
+    h2{
+        color:colors.$secondary-color;
+        text-align: center;
+    }
+    h3{
+        color:colors.$secondary-color;
+        margin-bottom: 10px;
+    }
+    p{
+        font-size: .9em;
+        width:98%;
+
+        padding: 10px 0;
+    }
+}

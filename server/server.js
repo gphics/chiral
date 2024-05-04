@@ -22,14 +22,11 @@ app.use("/user", userRouter);
 app.use("/project", projectRouter);
 app.use("/brief", briefRouter);
 
-
 // error handling
-app.use((err, req, res, next) => {
+app.use((err, _, res) => {
   const { message, code } = err;
-  console.log("FROM THE DEV ERROR:", err);
   res.status(code).json({ data: null, err: { message, code } });
 });
 
 const port = process.env.PORT_NUMBER;
 app.listen(port, () => console.log("SERVER RUNNING ON PORT: ", port));
-
