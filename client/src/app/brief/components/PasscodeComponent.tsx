@@ -35,7 +35,7 @@ function PasscodeComponent() {
       return;
     }
     {
-      dispatch(updatePasscode(second.data));
+      dispatch(updatePasscode(second.data.passcode));
       dispatch(updateAllow(true));
       if (brief) {
         dispatch(updateBrief(brief));

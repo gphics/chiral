@@ -5,9 +5,9 @@ export async function GET(req: NextRequest) {
 
     const { searchParams } = new URL(req.url)
     const { value: key } = searchParams.values().next()
-    console.log("I AM THE KEY: ", key)
+
     const url = `${process.env.API_URL}/passcode/${key}`
-    console.log("I AM THE PASSCODE URL: ", url)
+  
     const first = await fetch(url, { cache: "no-cache" })
     const second = await first.json()
     if (second.err?.message.includes("Cast to ObjectId")) {
@@ -20,8 +20,10 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
     const reqObj = await req.json()
+    console.log(reqObj)
     const { key, ...rest } = reqObj
     const api = `${process.env.API_URL}/brief?key=${key}`
+    console.log("I AM THE API", api, key)
     const first = await fetch(api, { method: "POST", body: JSON.stringify(rest), headers: { "Content-Type": "application/json" } })
     const second = await first.json()
     return Response.json(second)

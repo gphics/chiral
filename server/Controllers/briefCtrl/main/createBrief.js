@@ -17,6 +17,7 @@ module.exports = async (req, res, next) => {
       return next(errGen("key must be provided"));
     }
     const passcode = await passcodeModel.findOne({ key });
+    console.log("I AM THE PASSCODE", passcode);
     if (!passcode) {
       return next(errGen("invalid passcode"));
     }
@@ -82,7 +83,7 @@ module.exports = async (req, res, next) => {
     passcode.isUsed = true;
     passcode.projectId = project._id;
     await passcode.save();
-    return res.json({ data: {_id:brief._id}, err: null });
+    return res.json({ data: { _id: brief._id }, err: null });
   } catch (error) {
     return next(errGen(error.message));
   }

@@ -157,6 +157,7 @@ function MainBriefComponent() {
     // creating the data object
     const dataObj = { ...brief };
     const { key } = passcode;
+    console.log(key)
     /*
     const obj = {
       key,
@@ -177,7 +178,7 @@ function MainBriefComponent() {
     };
     */
     let first;
-    if (brief._id) {
+    if (brief?._id) {
       first = await fetch("/brief/components", {
         method: "PUT",
         body: JSON.stringify({ ...dataObj }),
