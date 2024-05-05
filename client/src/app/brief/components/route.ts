@@ -5,7 +5,9 @@ export async function GET(req: NextRequest) {
 
     const { searchParams } = new URL(req.url)
     const { value: key } = searchParams.values().next()
+    console.log("I AM THE KEY: ", key)
     const url = `${process.env.API_URL}/passcode/${key}`
+    console.log("I AM THE PASSCODE URL: ", url)
     const first = await fetch(url, { cache: "no-cache" })
     const second = await first.json()
     if (second.err?.message.includes("Cast to ObjectId")) {
