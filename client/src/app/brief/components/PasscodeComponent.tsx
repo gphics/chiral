@@ -21,7 +21,7 @@ function PasscodeComponent() {
       return;
     }
     dispatch(updateIsLoading(true));
-    console.log("I AM THE PASSCODE", passcode.key)
+    console.log("I AM THE PASSCODE", passcode.key);
     const first = await fetch(`/brief/components?key=${passcode.key}`);
     const second = await first.json();
     dispatch(updateIsLoading(!true));
@@ -38,7 +38,9 @@ function PasscodeComponent() {
     {
       dispatch(updatePasscode(second.data));
       dispatch(updateAllow(true));
-      dispatch(updateBrief(brief));
+      if (brief) {
+        dispatch(updateBrief(brief));
+      }
     }
   }
   function inputOnChangeHandler(e: any) {
