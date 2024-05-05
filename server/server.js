@@ -25,7 +25,7 @@ app.use("/brief", briefRouter);
 // error handling
 app.use((err, _, res) => {
   const { message, code } = err;
-  res.status(code).json({ data: null, err: { message, code } });
+  res.json({ data: null, err: { message, code } });
 });
 
 const port = process.env.PORT_NUMBER;
