@@ -16,6 +16,7 @@ app.use(
   })
 );
 
+
 // routes
 app.use("/passcode", passcodeRouter);
 app.use("/user", userRouter);
@@ -23,10 +24,9 @@ app.use("/project", projectRouter);
 app.use("/brief", briefRouter);
 
 // error handling
-app.use((err, _, res) => {
+app.use((err, req, res, next) => {
   const { message, code } = err;
-  res.json({ data: null, err: { message, code } });
+  res.status(code).json({ data: null, err: { message, code } });
 });
-
 const port = process.env.PORT_NUMBER;
 app.listen(port, () => console.log("SERVER RUNNING ON PORT: ", port));

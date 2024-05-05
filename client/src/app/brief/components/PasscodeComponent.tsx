@@ -21,7 +21,6 @@ function PasscodeComponent() {
       return;
     }
     dispatch(updateIsLoading(true));
-    console.log("I AM THE PASSCODE", passcode.key);
     const first = await fetch(`/brief/components?key=${passcode.key}`);
     const second = await first.json();
     dispatch(updateIsLoading(!true));
