@@ -38,7 +38,7 @@ function Third() {
         } = second.data[rand] as projectType;
         // @ts-ignore
         setState({ designs, name, brief, id });
-      }, 5000);
+      }, 30000);
       return;
     }
   }
