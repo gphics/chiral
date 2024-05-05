@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
       return next("id param must be provided");
     }
     const passcode = await passcodeModel.findOne({ key });
-    /*
+    
     if (!passcode) {
       return next(errGen("passcode does not exist", 404));
     }
@@ -24,7 +24,7 @@ module.exports = async (req, res, next) => {
       const brief = { ...des, jobType: project.type };
       return res.json({ data: { passcode, brief }, err: null });
     }
-*/
+
     return res.json({ data: { passcode }, err: null });
   } catch (error) {
     return next(errGen(error.message));
