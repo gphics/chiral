@@ -81,7 +81,7 @@ function MainBriefComponent() {
       name: "brandContact",
       value: brief.brandContact,
       label: "Brand Contact",
-      inputType: "number",
+      inputType: "tel",
     },
     {
       name: "brandEmail",
