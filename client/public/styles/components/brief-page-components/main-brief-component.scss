@@ -74,9 +74,11 @@
 
 
                     }
-                    option{
-                        color:colors.$primary-color;
+
+                    option {
+                        color: colors.$primary-color;
                     }
+
                     &:hover,
                     &:focus {
                         background: colors.$bg-gradient;
@@ -118,7 +120,7 @@
         margin: 10px 0;
 
         button {
-            margin: 10px 0;
+            margin: 10px auto;
             ;
 
             @include btnStyle.btn {
@@ -136,8 +138,46 @@
             text-transform: capitalize;
         }
 
-        input{
+        input {
             margin: 10px 0;
+        }
+
+        article {
+            width: 98%;
+            margin: 10px auto;
+
+            @include flexer.flexMixin {
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .img-holder {
+                @include flexer.flexMixin {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                button {
+                    display: none;
+
+                    .icon {
+                        transform: scale(1.4);
+                        color: colors.$white;
+                    }
+                }
+
+                img {
+                    margin: 10px;
+
+                    &:hover,
+                    &.active {
+                        transform: scale(1.04);
+                        border: 3px solid colors.$secondary-color;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+
         }
     }
 

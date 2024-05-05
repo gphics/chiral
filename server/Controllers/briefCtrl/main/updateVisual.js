@@ -28,14 +28,15 @@ module.exports = async (req, res, next) => {
     const first = await configuredCloudinary.uploader.upload(file.path, {
       folder: "chiral/brandvisuals",
     });
+    console.log(first)
     const { public_id, secure_url: url } = first;
     const filtered = brief.brandVisuals.filter(
       (elem) => elem.public_id !== image_id
     );
     brief.brandVisuals = [...filtered, { url, public_id }];
     await brief.save();
-    res.json({ data: "image updated", err: null });
+    res.json({ data:brief, err: null });
   } catch (error) {
-    return next(errGen(error.message));
+    return next(errGen(error?.message || "something went wrong"));
   }
 };

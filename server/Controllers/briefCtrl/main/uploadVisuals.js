@@ -32,8 +32,8 @@ module.exports = async (req, res, next) => {
       return { public_id: item.value.public_id, url: item.value.secure_url };
     });
     brief.brandVisuals = final;
-    await brief.save()
-    res.json({ data: "images uploaded", err: null });
+    await brief.save();
+    res.json({ data: brief, err: null });
   } catch (error) {
     return next(errGen(error.message));
   }

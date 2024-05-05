@@ -25,8 +25,8 @@ module.exports = async (req, res, next) => {
     );
     brief.brandVisuals = filtered;
     await brief.save();
-    res.json({ data: "image deleted", err: null });
+    res.json({ data: brief, err: null });
   } catch (error) {
-    return next(errGen(error.message));
+    return next(errGen( error?.message || "something went wrong !"));
   }
 };
