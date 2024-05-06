@@ -78,6 +78,7 @@ module.exports = async (req, res, next) => {
       brief: brief._id,
       name: `${brandName} project`,
       type: jobType,
+      status: "ongoing",
     });
     passcode.isLocked = true;
     passcode.isUsed = true;

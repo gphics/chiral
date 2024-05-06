@@ -4,6 +4,7 @@
 @use "./utils/footer-component.scss";
 @use "./utils/not-found-page.scss";
 @use "./pages/page-export.scss";
+
 @font-face {
   font-family: RegularFont;
   src: url("../assets/fonts/Montserrat-Regular.ttf");
@@ -17,10 +18,10 @@
   font-family: RegularFont, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-main{
-  width:97%;
-  margin:0 auto;
-  height: calc(100vh - 235px);
+main {
+  width: 97%;
+  margin: 0 auto;
+  height: calc(100vh - 240px);
   overflow-y: scroll;
 }
 

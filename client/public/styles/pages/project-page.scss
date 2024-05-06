@@ -1,0 +1,139 @@
+@use "../utils/btnStyle.scss" as btnStyle;
+@use "../utils/colors.scss" as colors;
+@use "../utils/flexing.scss" as flexer;
+@use "../utils/mediaStyle.scss" as mediaStyle;
+
+.project-page {
+    width: 98%;
+    margin: 10px auto;
+
+    @include flexer.flexMixin {
+        flex-direction: column;
+    }
+
+    .filter-form {
+        width: 90%;
+        margin: 10px auto;
+
+        @include flexer.flexMixin {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            background: colors.$secondary-color;
+            outline: none;
+            border: none;
+            margin-bottom: 10px;
+            height: 30px;
+            width: 80%;
+            max-width: 350px;
+            color: colors.$white;
+            border-radius: 5px;
+            text-align: center;
+
+            &::placeholder {
+                color: colors.$black
+            }
+        }
+
+        .sort-ctrl {
+            width: 80%;
+            max-width: 350px;
+
+            @include flexer.flexMixin {
+                justify-content: space-around;
+            }
+
+            button {
+                @include btnStyle.btn {}
+
+                ;
+
+                &.ongoing {
+                    background: colors.$ongoing;
+                }
+
+                &.completed {
+                    background: colors.$completed;
+                }
+            }
+        }
+    }
+
+    .project-list-component {
+
+        width: 100%;
+        margin: 5px auto;
+
+        h3 {
+            margin: 15% auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        section {
+
+            @include flexer.flexMixin {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .each-project {
+                width: 150px;
+                margin: 10px;
+                text-decoration: none;
+                color: colors.$white;
+
+                &:hover {
+                    transform: scale(1.01);
+                }
+
+                @include flexer.flexMixin {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                h4 {
+
+                    margin: 5px 0;
+                    text-align: center;
+                    font-size: .8em;
+                    text-align: center;
+                    width: 100%;
+                }
+
+                h5 {
+                    // background-color: red;
+                    text-align: center;
+                    width: 100%;
+                    height: 20px;
+
+                    @include flexer.flexMixin {
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    span {
+                        margin-right: 5px;
+                        margin-top: 5px;
+
+                        &.completed {
+                            color: colors.$completed;
+                        }
+
+                        &.ongoing {
+                            color: colors.$ongoing;
+                        }
+                    }
+                }
+
+                img {
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

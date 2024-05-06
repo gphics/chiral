@@ -3,7 +3,7 @@ export type linkArrType = {
   title?: string;
   Icon?: any;
   action?: (target?: any) => void;
-  isTarget?:boolean
+  isTarget?: boolean;
 };
 
 export type imgHolderType = {
@@ -31,7 +31,7 @@ export type briefFormArrObjType = {
 };
 
 export type briefType = {
-  jobType:string
+  jobType: string;
   _id?: string;
   __v?: number;
   createdAt?: string;
@@ -56,6 +56,7 @@ export type briefType = {
 export type projectType = {
   _id?: string;
   __v?: number;
+  status?: "ongoing" | "completed";
   createdAt?: string;
   updatedAt?: string;
   brief: briefType;
@@ -88,6 +89,13 @@ export type briefSliceType = {
   passcode: passcodeType;
   allow: boolean;
   brief: briefType;
-  isLoading:boolean
+  isLoading: boolean;
 };
 
+export type projectSliceType = {
+  search?: string;
+  projectList?: projectType[] | null;
+  duplicatedProjectList?: projectType[] | null;
+  singleProject?: projectSliceType | null;
+  isLoading?: boolean;
+};
