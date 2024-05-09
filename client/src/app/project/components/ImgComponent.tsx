@@ -5,25 +5,32 @@ import ImgHolder from "@/utilityComponents/ImgHolder";
 function ImgComponent({
   brief,
   designs,
+  url,
+  width = 150,
+  height = 150
 }: {
-  brief: briefType;
-  designs: imageType[] | undefined;
+  brief?: briefType;
+  url?: string;
+    designs?: imageType[] | undefined;
+    width?: number;
+  height?:number
 }) {
   let imgSrc: StaticImageData | string = DefaultImg;
-  if (!navigator.onLine) {
-    imgSrc = DefaultImg;
-  } else if (designs?.length) {
+  if (url && navigator.onLine) {
+    imgSrc = url;
+  } else if (!url && designs?.length) {
     imgSrc = designs[0].url;
-  } else if (brief?.brandVisuals?.length) {
+  } else if (!url && brief?.brandVisuals?.length) {
     imgSrc = brief.brandVisuals[0].url;
   }
+
   return (
     <ImgHolder
       src={imgSrc}
-      imgHolderClass="img-holder"
+      imgHolderClass="proj-img-holder"
       alt="project image"
-      width={150}
-      height={150}
+      width={width}
+      height={height}
     />
   );
 }

@@ -52,7 +52,10 @@ export type briefType = {
   clientEmail: string;
   clientLocation: string;
 };
-
+export type urlType = {
+  link: string,
+  type:"server" | "client"
+}
 export type projectType = {
   _id?: string;
   __v?: number;
@@ -63,7 +66,7 @@ export type projectType = {
   name: string;
   type: "software" | "design";
   cost: number;
-  webUrls?: string[];
+  webUrls?: urlType[];
   designs?: imageType[];
   deploymentPlatforms?: string[];
   techStacks?: string[];
@@ -92,10 +95,26 @@ export type briefSliceType = {
   isLoading: boolean;
 };
 
+export type weakProjectType = {
+  _id?: string;
+  __v?: number;
+  status?: "ongoing" | "completed";
+  createdAt?: string;
+  updatedAt?: string;
+  brief?: briefType;
+  name?: string;
+  type?: "software" | "design";
+  cost?: number;
+  webUrls?: urlType[];
+  designs?: imageType[];
+  deploymentPlatforms?: string[];
+  techStacks?: string[];
+};
+
 export type projectSliceType = {
   search?: string;
   projectList?: projectType[] | null;
   duplicatedProjectList?: projectType[] | null;
-  singleProject?: projectSliceType | null;
+  singleProject?: weakProjectType;
   isLoading?: boolean;
 };

@@ -1,0 +1,104 @@
+@use "../utils/btnStyle.scss" as btnStyle;
+@use "../utils/colors.scss" as colors;
+@use "../utils/flexing.scss" as flexer;
+@use "../utils/mediaStyle.scss" as medStyle;
+
+.each-project-page {
+    width: 98%;
+    margin: 10px auto;
+
+
+    .project-info {
+        @include flexer.flexMixin {
+            flex-direction: column;
+        }
+
+        article {
+            @include flexer.flexMixin {
+                flex-direction: column;
+            }
+
+            span {
+                display: block;
+                margin: 5px auto;
+                font-size: 14px;
+                color: colors.$secondary-color;
+                font-weight: 100;
+                text-transform: capitalize;
+            }
+
+            p {
+                font-size: .9em;
+                margin: 5px 0;
+            }
+        }
+
+        .gallery-component {
+            h3 {
+                text-align: center;
+                margin: 10px auto;
+                color:colors.$secondary-color;
+            }
+
+            .gallery {
+
+                @include flexer.flexMixin {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                }
+
+                .ctrl-holder {
+                    width: 200px;
+
+                    @include flexer.flexMixin {
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    button {
+                        @include btnStyle.btn {}
+
+                        ;
+                        font-weight: 600;
+                    }
+                }
+
+                .images {
+                    position: relative;
+                    width: 350px;
+                    height: 350px;
+                    overflow: hidden;
+
+                    @include flexer.flexMixin {
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .proj-img-holder {
+                        width: 350px;
+                        height: 350px;
+                        align-self: center;
+                        flex: 0 0 auto;
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+
+                        @include flexer.flexMixin {
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        img {
+                            border-radius: 5px;
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+    }
+}

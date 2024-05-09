@@ -6,7 +6,7 @@ const initialState: projectSliceType = {
     projectList: null,
     duplicatedProjectList: null,
     isLoading: false,
-    singleProject: null
+    singleProject: { name: "", _id: "", type: "design" }
 }
 const main = createSlice({
     name: "projectSlice",

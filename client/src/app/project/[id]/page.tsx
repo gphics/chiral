@@ -6,6 +6,8 @@ import { useParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import DesignProject from "./components/DesignProject";
+import SoftwareProject from "./components/SoftwareProject";
 
 function EachProjectPage() {
   const { id } = useParams();
@@ -21,23 +23,21 @@ function EachProjectPage() {
     dispatch(updateIsLoading(true));
     const first = await fetch(`/project/components?id=${id}`);
     const second = await first.json();
-    dispatch(updateIsLoading(!true));
+
     if (second.err) {
+      dispatch(updateIsLoading(!true));
       toast.error(second.err.message);
       return;
     }
     dispatch(updateSingleProject(second.data));
+    dispatch(updateIsLoading(!true));
   }
   useEffect(() => {
     fetchProject();
-  }, []);
+  }, [id]);
   return (
     <main className="each-project-page">
-      {isLoading ? (
-        <LoadingComponent />
-      ) : (
-        <article> {singleProject?.name} </article>
-      )}
+      {isLoading && !singleProject?._id ? <LoadingComponent/> : singleProject?.type === "design"? <DesignProject/> : <SoftwareProject/> }
     </main>
   );
 }

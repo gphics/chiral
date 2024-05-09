@@ -5,9 +5,7 @@ export async function GET(req: NextRequest) {
     const id = searchParams.values().next().value
     const api = `${process.env.API_URL}/project/${id}`
     const first = await fetch(api, { cache: "no-cache" })
-    const second = await first.json(
-
-    )
+    const second = await first.json()
 
     return Response.json(second)
 }
