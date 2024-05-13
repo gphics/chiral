@@ -10,57 +10,6 @@
     @include flexer.flexMixin {
         flex-direction: column;
     }
-
-    .filter-form {
-        width: 90%;
-        margin: 10px auto;
-
-        @include flexer.flexMixin {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        input {
-            background: colors.$secondary-color;
-            outline: none;
-            border: none;
-            margin-bottom: 10px;
-            height: 30px;
-            width: 80%;
-            max-width: 350px;
-            color: colors.$white;
-            border-radius: 5px;
-            text-align: center;
-
-            &::placeholder {
-                color: colors.$black
-            }
-        }
-
-        .sort-ctrl {
-            width: 80%;
-            max-width: 350px;
-
-            @include flexer.flexMixin {
-                justify-content: space-around;
-            }
-
-            button {
-                @include btnStyle.btn {}
-
-                ;
-
-                &.ongoing {
-                    background: colors.$ongoing;
-                }
-
-                &.completed {
-                    background: colors.$completed;
-                }
-            }
-        }
-    }
-
     .project-list-component {
 
         width: 100%;

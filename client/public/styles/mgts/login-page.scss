@@ -1,0 +1,58 @@
+@use "../utils/btnStyle.scss" as btn;
+@use "../utils/colors.scss" as colors;
+@use "../utils/flexing.scss" as flexer;
+
+#mgt-login-page {
+    // background-color: red;
+    height: 90vh;
+    margin: auto;
+
+    @include flexer.flexMixin {
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        // background-color: palevioletred;
+        background: colors.$bg-gradient;
+        height: 40%;
+        width: 90%;
+        max-width: 350px;
+
+        @include flexer.flexMixin {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h3 {
+            font-size: .9em;
+            margin: 5px auto;
+        }
+
+
+        input {
+            width: 70%;
+            height: 35px;
+            border-radius: 5px;
+            border: none;
+            color: colors.$white;
+            outline: none;
+            padding-left: 10px;
+            margin: 5px auto;
+            background-color: colors.$secondary-color;
+
+            &::placeholder {
+                color: colors.$white;
+            }
+
+        }
+
+        button {
+            @include btn.btn {
+                margin: 10px auto;
+                ;
+            }
+        }
+    }
+}

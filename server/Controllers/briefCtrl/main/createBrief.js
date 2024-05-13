@@ -17,11 +17,13 @@ module.exports = async (req, res, next) => {
       return next(errGen("key must be provided"));
     }
     const passcode = await passcodeModel.findOne({ key });
-    console.log("I AM THE PASSCODE", passcode);
     if (!passcode) {
       return next(errGen("invalid passcode"));
     }
     if (passcode.isUsed && passcode.isLocked) {
+      return next(errGen("passcode is already used"));
+    }
+    if (passcode.projectId) {
       return next(errGen("passcode is already used"));
     }
     const {

@@ -28,24 +28,24 @@ function DesignProject() {
         </h5>
         <p>
           <span>Brand Description </span>
-          {brief.brandDescription}
+          {brief?.brandDescription}
         </p>
         <p>
           <span>Job Description </span>
-          {brief.jobDescription}
+          {brief?.jobDescription}
         </p>
       </article>
-      {brief.brandVisuals.length ? (
+      {brief?.brandVisuals.length ? (
         <GalleryComponents
           height={300}
           width={300}
           title="Brand Visuals"
-          srcs={brief.brandVisuals}
+          srcs={brief?.brandVisuals}
         />
       ) : (
         ""
       )}
-      {designs.length ? (
+      {designs?.length ? (
         <GalleryComponents
           height={300}
           width={300}

@@ -45,11 +45,11 @@ function SoftwareProject() {
         </h5>
         <p>
           <span>Brand Description </span>
-          {brief.brandDescription}
+          {brief?.brandDescription}
         </p>
         <p>
           <span>Job Description </span>
-          {brief.jobDescription}
+          {brief?.jobDescription}
         </p>
         {techStacks?.length ? (
           <p>
@@ -60,7 +60,7 @@ function SoftwareProject() {
           ""
         )}
       </article>
-      {brief.brandVisuals.length ? (
+      {brief?.brandVisuals.length ? (
         <GalleryComponents
           height={300}
           width={300}

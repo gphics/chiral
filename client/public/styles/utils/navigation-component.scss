@@ -1,12 +1,11 @@
 @use "./colors.scss" as colors;
 @use "./flexing.scss" as flexer;
 @use "./mediaStyle.scss" as medStyle;
+@use "./btnStyle.scss" as btn;
 
 .navigation-component {
-    // background: colors.$bg-gradient;
     width: 100%;
     height: 60px;
-    // background: red;
     margin-bottom: 10px;
 
     @include flexer.flexMixin {
@@ -61,14 +60,12 @@
         a {
             color: colors.$white;
             text-decoration: none;
-            font-size: .9em;
-
+            font-size: .8em;
+            text-transform: capitalize;
             &:hover,
             &.active {
+                font-size: .9em;
                 color: colors.$secondary-color;
-                text-decoration: underline;
-                text-decoration-thickness: 3px;
-                font-size: 1em;
             }
         }
 

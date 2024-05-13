@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import FilterComponent from "./components/FilterComponent";
+import FilterComponent from "../../utilityComponents/FilterComponent";
 import ProjectListComponent from "./components/ProjectListComponent";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";

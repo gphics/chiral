@@ -1,0 +1,202 @@
+@use "../utils/btnStyle.scss" as btn;
+@use "../utils/colors.scss" as colors;
+@use "../utils/flexing.scss" as flexer;
+
+.passcode-page {
+    .passcode-nf {
+        margin: 25% auto;
+    }
+
+    @include flexer.flexMixin {
+        flex-direction: column;
+    }
+
+    margin: 10px auto;
+    width: 98%;
+
+    form {
+        margin: 10px 0;
+
+        input {
+            margin: 1% auto;
+            display: block;
+            height: 30px;
+            width: 60%;
+            max-width: 300px;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+    }
+
+    .sort {
+        width: 98%;
+
+        margin: 10px auto;
+        background-color: colors.$secondary-color;
+        background: colors.$bg-gradient;
+        height: 160px;
+
+        @include flexer.flexMixin {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        ;
+
+        button {
+            @include btn.btn {}
+
+            ;
+            flex:0 0 auto;
+            height: max-content;
+            width: max-content;
+            margin: 5px 3%
+        }
+    }
+
+    .create-btn {
+        @include btn.btn {}
+
+        ;
+        width: max-content;
+        margin: 2% 1%;
+    }
+
+    a {
+
+
+        @include flexer.flexMixin {
+            align-items: center;
+        }
+
+        &:hover {
+            transform: scale(1.005);
+        }
+
+        span {
+            margin-right: 10px;
+        }
+
+        padding: 0 10px;
+        background: colors.$secondary-color;
+        text-align: center;
+        height: 40px;
+        color: colors.$white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: .8em;
+        margin: 10px;
+    }
+}
+
+
+.single-passcode-page {
+    .proj-goto {
+        // text-decoration: none;
+        color: colors.$secondary-color;
+    }
+
+    section {
+        @include flexer.flexMixin {
+            flex-direction: column;
+        }
+
+        article {
+            margin: 5px 0;
+
+            p {
+                font-size: .8em;
+                margin-bottom: 10px;
+
+                span {
+                    display: block;
+                    text-transform: capitalize;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        aside {
+            margin: 10px 0;
+            width: 80%;
+            max-width: 350px;
+
+            @include flexer.flexMixin {
+                justify-content: space-around;
+            }
+
+            button {
+                @include btn.btn {}
+
+                ;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .passcode-update-form {
+        height: 90vh;
+        width: 100vw;
+        position: absolute;
+        z-index: 9999;
+        background: colors.$bg-gradient ;
+        background-color: colors.$secondary-color;
+
+        @include flexer.flexMixin {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ;
+
+        section {
+            width: 90%;
+            border-radius: 5px;
+            background: colors.$bg-gradient;
+            height: 50%;
+            max-width: 400px;
+
+            @include flexer.flexMixin {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            button {
+                @include btn.btn {}
+
+                ;
+                width: max-content;
+                margin: 10px 0;
+                align-self: center;
+            }
+
+            padding: 0 10px;
+
+            div {
+                height: 60px;
+                width: 90%;
+                margin: 10px 0;
+
+                @include flexer.flexMixin {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                label {
+                    font-size: .8em;
+                }
+
+                select {
+                    margin: 5px 0;
+                    height: 40px;
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+}

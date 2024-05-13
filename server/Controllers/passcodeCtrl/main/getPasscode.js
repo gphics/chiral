@@ -13,9 +13,9 @@ module.exports = async (req, res, next) => {
     if (!passcode) {
       return next(errGen("passcode does not exist", 404));
     }
-    console.log("I AM THE PASSCODE: ", passcode);
+   
     if (passcode.projectId) {
-      console.log("BECAUSE THERE IS PROJECTID: ", passcode.projectId);
+     ;
       const project = await projectModel
         .findById(passcode.projectId)
         .populate("brief");

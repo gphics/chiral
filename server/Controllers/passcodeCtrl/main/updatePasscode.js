@@ -9,18 +9,19 @@ const passcodeModel = require("../../../Models/passcodeModel");
  * @description The req.body can have the following optional params(isLocked:Boolean, isUsed:Boolean, projectId:String)
  * @returns {object}
  */
-
+ 
 module.exports = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { isLocked, projectId, isUsed } = req.body;
-
+    // const { isLocked, projectId, isUsed } = req.body;
+    console.log(req.body)
     
     const passcode = await passcodeModel.findByIdAndUpdate(
       id,
       { ...req.body },
       { new: true }
     );
+    console.log(passcode)
     if (!passcode) {
       return next(errGen("invalid passcode", 404));
     }

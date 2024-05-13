@@ -3,7 +3,9 @@
 @use "./utils/navigation-component.scss";
 @use "./utils/footer-component.scss";
 @use "./utils/not-found-page.scss";
+@use "./utils/filter-form-component.scss";
 @use "./pages/page-export.scss";
+@use "./mgts/mgt-export.scss";
 
 @font-face {
   font-family: RegularFont;
@@ -19,10 +21,16 @@
 }
 
 main {
-  width: 97%;
+  width: 98%;
   margin: 0 auto;
-  height: calc(100vh - 240px);
+  height: calc(100vh - 235px);
   overflow-y: scroll;
+
+}
+
+.full-page {
+  height: unset;
+  overflow-y: unset;
 }
 
 html,

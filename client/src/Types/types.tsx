@@ -53,9 +53,9 @@ export type briefType = {
   clientLocation: string;
 };
 export type urlType = {
-  link: string,
-  type:"server" | "client"
-}
+  link: string;
+  type: "server" | "client";
+};
 export type projectType = {
   _id?: string;
   __v?: number;
@@ -73,8 +73,8 @@ export type projectType = {
 };
 
 export type resultType = {
-  err: null | string;
-  data: any[] | null | object;
+  err: null | { message?: string };
+  data: any[] | string | null | object;
 };
 
 export type passcodeType = {
@@ -117,4 +117,15 @@ export type projectSliceType = {
   duplicatedProjectList?: projectType[] | null;
   singleProject?: weakProjectType;
   isLoading?: boolean;
+};
+
+export type mgtSliceType = {
+  isLoading: boolean;
+  search: string;
+  currentProject: weakProjectType;
+  projectList: weakProjectType[];
+  duplicatedProjectList: weakProjectType[];
+  passcodeList:passcodeType[],
+  duplicatedPasscodeList: passcodeType[],
+  singlePasscode:passcodeType
 };

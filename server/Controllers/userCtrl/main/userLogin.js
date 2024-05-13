@@ -14,7 +14,7 @@ module.exports = async (req, res, next) => {
     if (password !== user[0].password) {
       return next(errGen("incorrect password"));
     }
-    return res.json({ data: "login successful", err: null });
+    return res.json({ data: user[0]._id , err: null });
   } catch (error) {
     return next(errGen(error.message));
   }

@@ -1,0 +1,59 @@
+@use "../utils/btnStyle.scss" as btn;
+@use "../utils/colors.scss" as colors;
+@use "../utils/flexing.scss" as flexer;
+
+
+
+.mgt-page {
+    .proj-nf{
+        margin: 20% auto;
+        color:colors.$secondary-color;
+    }
+    .project-list {
+        @include flexer.flexMixin {
+            flex-direction: column;
+        }
+
+        .small-project-list {
+            margin: 10px 0;
+            background: colors.$bg-gradient;
+            height: 40px;
+            text-decoration: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: .8em;
+            color: colors.$white;
+
+            @include flexer.flexMixin {
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            h4 {
+                width: 60%;
+            }
+
+            &:hover {
+                transform: scale(1.002);
+                background-color: colors.$secondary-color;
+            }
+
+            padding: 0 10px;
+            .icon{
+                transform: scale(1.8);
+                color:colors.$secondary-color;
+                cursor: pointer;
+                &.del{
+                    &:hover{
+                        color:red
+                    }
+                }
+                &.edit{
+                    &:hover{
+                        color:colors.$ongoing
+                    }
+                }
+            }
+        }
+    }
+}

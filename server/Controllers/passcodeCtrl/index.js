@@ -8,22 +8,22 @@ const passcodeCtrl = [
   {
     action: createPasscode,
     mid: null,
-    url: "/create-passcode",
+    url: "/create",
     method: "get",
   },
-  {
-    action: updatePasscode,
-    mid: null,
-    url: "/update-passcode/:id",
-    method: "put",
-  },
-  ,
   {
     action: getPasscodes,
     mid: null,
     url: "",
     method: "get",
   },
+  {
+    action: updatePasscode,
+    mid: null,
+    url: "/:id",
+    method: "put",
+  },
+  ,
   {
     action: getPasscode,
     mid: null,

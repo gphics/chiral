@@ -1,6 +1,9 @@
 @use "./colors.scss" as colors;
 @use "./flexing.scss" as flexer;
 
+.hide-footer {
+    display: none;
+}
 
 .footer-component {
     margin-top: 5px;
@@ -36,15 +39,21 @@
     p {
         font-weight: 800;
         height: 20%;
-        @include flexer.flexMixin{align-items: center};
-      
+
+        @include flexer.flexMixin {
+            align-items: center
+        }
+
+        ;
+
         span {
             margin-left: 1.5%;
             font-size: .9em;
 
         }
     }
-/*
+
+    /*
     .icon-holder {
 
         width: 30%;

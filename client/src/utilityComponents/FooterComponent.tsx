@@ -1,13 +1,17 @@
+"use client"
 import Logo from "../../public/assets/svg/logo-2.svg";
 import ImgHolder from "./ImgHolder";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { IoPhonePortraitOutline } from "react-icons/io5";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 function FooterComponent() {
+  const currentPath = usePathname();
+  const showState = currentPath.includes("/mgt") ? false : true;
   return (
-    <div className="footer-component">
+    <div className={showState ? "footer-component" : "hide-footer"}>
       <ImgHolder
         imgHolderClass="logo-holder"
         src={Logo}
