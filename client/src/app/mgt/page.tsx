@@ -47,7 +47,7 @@ function DashboardPage() {
   useEffect(() => {
     fetchProjects();
   }, []);
-  return ( 
+  return (
     <main className="full-page mgt-page">
       <FilterComponent
         onChangeHandler={onChangeHandler}
@@ -61,10 +61,16 @@ function DashboardPage() {
           <>
             {" "}
             {projectList.map((elem: projectType, index: number) => {
-              const { name, _id, status } = elem;
-        
+              const {
+                name,
+                _id,
+                status,
+                brief: { _id: briefId },
+              } = elem;
+
               return (
                 <SmallProjectList
+                  briefId={briefId}
                   status={status}
                   key={index}
                   name={name}

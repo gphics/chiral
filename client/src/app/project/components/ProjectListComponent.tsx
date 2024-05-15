@@ -1,9 +1,8 @@
 import { projectSliceType, projectType } from "@/Types/types";
 import Link from "next/link";
-import ImgComponent from "./ImgComponent";
+import ImgComponent from "../../../utilityComponents/ImgComponent";
 import { RiProgress3Fill } from "react-icons/ri";
 function ProjectListComponent({ arr }: { arr: projectType[] }) {
-
   return (
     <div className="project-list-component">
       {!arr?.length ? (

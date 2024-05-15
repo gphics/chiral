@@ -1,0 +1,69 @@
+@use "../utils/btnStyle.scss" as btn;
+@use "../utils/colors.scss" as colors;
+@use "../utils/flexing.scss" as flexer;
+
+.brief-preview-page {
+    @include flexer.flexMixin {}
+
+    ;
+
+    .brief-nf {
+        margin: 25% auto;
+        color: colors.$secondary-color;
+    }
+
+    .brief-details-components {
+        @include flexer.flexMixin {
+            flex-direction: column;
+        }
+
+        h4 {
+            color: colors.$secondary-color;
+            text-align: center;
+        }
+
+        article {
+            margin: 10px auto;
+            width: 99%;
+
+            @include flexer.flexMixin {
+                flex-direction: column;
+            }
+
+            p {
+                font-size: .9em;
+
+                span {
+                    display: block;
+                    margin: 5px 0;
+                    text-decoration: underline;
+                    color: colors.$secondary-color;
+                }
+            }
+        }
+
+        section {
+            margin: 10px auto;
+
+            div {
+                @include flexer.flexMixin {
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+
+                .proj-img-holder {
+                    margin: 10px;
+                }
+            }
+        }
+
+        .download-btn {
+            @include btn.btn {}
+
+            ;
+            margin: 10px auto;
+            width: max-content;
+            align-self: center;
+        }
+    }
+}

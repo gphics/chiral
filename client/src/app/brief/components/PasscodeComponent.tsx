@@ -33,7 +33,7 @@ function PasscodeComponent() {
     if (ps.isLocked && ps.isUsed) {
       toast.error("passcode is locked, contact the admin to unlock it");
       return;
-    }
+    } 
     {
       dispatch(updatePasscode(second.data.passcode));
       dispatch(updateAllow(true));

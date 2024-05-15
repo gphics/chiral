@@ -118,6 +118,31 @@ export type projectSliceType = {
   singleProject?: weakProjectType;
   isLoading?: boolean;
 };
+export type weakBriefType = {
+  jobType?: string;
+  _id?: string;
+  __v?: number;
+  createdAt?: string;
+  updatedAt?: string;
+  brandName?: String;
+  brandServices?: string[];
+  brandContact?: number;
+  brandColors?: string[];
+  brandValues?: string[];
+  brandEmail?: string;
+  brandLocation?: string;
+  brandDescription?: string;
+  jobDescription?: string;
+  brandVisuals?: imageType[];
+  // client
+  clientContact?: number;
+  clientName?: string;
+  clientEmail?: string;
+  clientLocation?: string;
+};
+export interface pdfType extends imageType {
+  briefId: string;
+}
 
 export type mgtSliceType = {
   isLoading: boolean;
@@ -125,7 +150,10 @@ export type mgtSliceType = {
   currentProject: weakProjectType;
   projectList: weakProjectType[];
   duplicatedProjectList: weakProjectType[];
-  passcodeList:passcodeType[],
-  duplicatedPasscodeList: passcodeType[],
-  singlePasscode:passcodeType
+  passcodeList: passcodeType[];
+  duplicatedPasscodeList: passcodeType[];
+  singlePasscode: passcodeType;
+  brief: weakBriefType;
+  pdf:pdfType | null
 };
+

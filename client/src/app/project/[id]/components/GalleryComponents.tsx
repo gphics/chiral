@@ -1,6 +1,6 @@
 import { imageType } from "@/Types/types";
 import React, { useEffect, useState } from "react";
-import ImgComponent from "../../components/ImgComponent";
+import ImgComponent from "../../../../utilityComponents/ImgComponent";
 import { GrNext, GrPrevious } from "react-icons/gr";
 function GalleryComponents({
   srcs,

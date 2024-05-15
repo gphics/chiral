@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= obj?.brandName || "" %> Brief
+    </title>
+    <link rel="stylesheet" type="text/css" href="/brief.css">
+</head>
+
+<body>
+    <main>
+
+        <!-- brand details article -->
+        <article className="brand-details">
+            <h4>Brand Details</h4>
+            <p>
+                <span>Name</span>
+                <%= obj.brandName%>
+            </p>
+            <p>
+                <span>Services</span>
+                <%= obj.brandServices?.join(" | ")%>
+            </p>
+           
+            <p>
+                <span>Values</span>
+                <%= obj.brandValues?.join(" | ")%>
+            </p>
+            <% if(obj.brandColors.length) {%>
+                <p>
+                    <span>Colors</span>
+                    <%= obj.brandColors?.join(" | ")%>
+                            </p>
+                <% } %>
+            
+            <p>
+                <span>Description</span>
+                <%= obj.brandDescription%>
+            </p>
+            <p>
+                <span>Job Description</span>
+                <%= obj.jobDescription %>
+            </p>
+            <p>
+                <span>Job Type</span>
+                <%= obj.jobType %>
+            </p>
+            <p>
+                <span>Contact</span>
+                <%= obj.brandContact %>
+            </p>
+            <p>
+                <span>Email</span>
+                 <%= obj.brandEmail %>
+            </p>
+            <p>
+                <span>Location</span>
+                 <%= obj.brandLocation %>
+            </p>
+        </article>
+        <!-- client details article -->
+        <article className=" client-details">
+                    <h4>Client Details</h4>
+                    <p>
+                        <span>Name</span>
+                        <%= obj.clientName %>
+                    </p>
+                    <p>
+                        <span>Contact</span>
+                        <%= obj.clientContact %>
+                    </p>
+                    <p>
+                        <span>Email</span>
+                        <%= obj.clientEmail%>
+                    </p>
+                    <p>
+                        <span>Location</span>
+                        <%= obj.clientLocation %>
+                    </p>
+        </article>
+        <!-- brand visuals -->
+        <% if(obj.brandVisuals.length) {%>
+            <section>
+                <h4>Brand Visuals</h4>
+                <div class="img-holder">
+
+                    <% obj.brandVisuals.map(elem=>{ %>
+                        <img src="<%= elem.url  %>" alt="brand-visuals" />
+                        <% }); %>
+
+                </div>
+
+            </section>
+            <% } %>
+
+    </main>
+</body>
+
+</html>

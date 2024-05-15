@@ -62,6 +62,7 @@ module.exports = async (req, res, next) => {
       }
     });
     const brief = await briefModel.create({
+      jobType,
       brandName,
       brandServices,
       brandContact,

@@ -10,7 +10,9 @@ const initialState: mgtSliceType = {
     duplicatedProjectList: [],
     passcodeList: [],
     duplicatedPasscodeList: [],
-    singlePasscode: { isLocked: true, isUsed: true, key: "" }
+    singlePasscode: { isLocked: true, isUsed: true, key: "" },
+    brief: {},
+    pdf:null,
 }
 
 const main = createSlice({
@@ -44,6 +46,12 @@ const main = createSlice({
             const { name, value } = action.payload
             // @ts-ignore
             state.singlePasscode[name] = value
+        },
+        fillBrief(state: mgtSliceType, action) {
+            state.brief = action.payload
+        },
+        fillPdf(state: mgtSliceType, action) {
+            state.pdf  = action.payload
         }
     }
 })

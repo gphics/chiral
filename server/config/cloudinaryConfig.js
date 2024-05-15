@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
     const newFileName = `chiral-${file.originalname
       .slice(0, 21)
       .replaceAll(" ", "-")}`;
-    /*
+
     // mimetype check
     const mimetype = file.mimetype;
     if (
@@ -28,7 +28,6 @@ const storage = multer.diskStorage({
       err.code = 400;
       cb(err, newFileName);
     }
-    */
 
     cb(null, newFileName);
   },

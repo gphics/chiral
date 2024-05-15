@@ -5,13 +5,15 @@ import { useRouter } from "next/navigation";
 import { MdOutlineEditNote, MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-
+import { LuView } from "react-icons/lu";
 function SmallProjectList({
   name,
   _id,
   status,
+  briefId,
 }: {
   name: string;
+  briefId: string | undefined;
   _id: string | undefined;
   status: "completed" | "ongoing" | undefined;
 }) {
@@ -36,13 +38,25 @@ function SmallProjectList({
   function editbtnClick(e: any) {
     router.push(`/mgt/project/${_id}`);
   }
+  function previewBriefOnClick() {
+    router.push(`/mgt/brief/${briefId}`)
+  }
   return (
     <div className="small-project-list">
       {isLoading ? <LoadingComponent /> : ""}
-      <h4> {name} </h4>
+      <h4> {name.length > 25 ? `${name.slice(0,24)} ...`:name} </h4>
       <small> {status} </small>
-      <MdOutlineEditNote onClick={editbtnClick} className="icon edit" />
-      <MdDelete onClick={delbtnClick} className="icon del" />
+      <LuView onClick={previewBriefOnClick} title="preview brief" className="icon preview-brief" />
+      <MdOutlineEditNote
+        title="edit project"
+        onClick={editbtnClick}
+        className="icon edit"
+      />
+      <MdDelete
+        title="delete project"
+        onClick={delbtnClick}
+        className="icon del"
+      />
     </div>
   );
 }

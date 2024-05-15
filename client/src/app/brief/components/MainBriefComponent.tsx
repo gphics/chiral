@@ -2,7 +2,7 @@
 import { toast } from "react-toastify";
 import { briefSliceActions } from "@/slices/briefSlice";
 import { briefFormArrObjType } from "@/Types/types";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BrandFormPart from "./BrandFormPart";
 import ClientFormPart from "./ClientFormPart";
@@ -157,7 +157,7 @@ function MainBriefComponent() {
     // creating the data object
     const dataObj = { ...brief };
     const { key } = passcode;
-    console.log(key)
+
     /*
     const obj = {
       key,

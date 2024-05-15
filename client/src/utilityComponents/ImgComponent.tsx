@@ -1,5 +1,5 @@
 import { briefType, imageType } from "@/Types/types";
-import DefaultImg from "../../../../public/assets/PNG/default-img.png";
+import DefaultImg from "../../public/assets/PNG/default-img.png"
 import { StaticImageData } from "next/image";
 import ImgHolder from "@/utilityComponents/ImgHolder";
 function ImgComponent({

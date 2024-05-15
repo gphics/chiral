@@ -8,6 +8,12 @@ const schema = new mongoose.Schema(
     brandColors: { type: Array, default: null },
     brandValues: { type: Array, default: null },
     brandEmail: { type: String, required: true },
+    jobType: {
+      type: String,
+      required: true,
+      enums: ["software", "design"],
+      default: "design",
+    },
     brandLocation: { type: String, required: true },
     brandDescription: { type: String, required: true },
     jobDescription: { type: String, required: true },
