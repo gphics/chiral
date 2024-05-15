@@ -15,7 +15,7 @@
 
 }
 
-body{
+body {
     background-color: var(--primary-color);
     overflow-y: scroll;
 }
@@ -49,6 +49,10 @@ p {
     font-size: .9em;
 }
 
+p .desc {
+    text-transform: capitalize;
+}
+
 span {
     display: block;
     margin: 5px 0;
@@ -57,13 +61,13 @@ span {
 }
 
 
-section{
+section {
     margin: 50px auto 0;
     /* background-color: red; */
     align-self: center;
 }
 
-.img-holder{
+.img-holder {
     margin: 10px auto;
     display: flex;
     justify-content: center;

@@ -20,17 +20,17 @@
                 <span>Name</span>
                 <%= obj.brandName%>
             </p>
-            <p>
+            <p class="desc">
                 <span>Services</span>
                 <%= obj.brandServices?.join(" | ")%>
             </p>
            
-            <p>
+            <p class="desc">
                 <span>Values</span>
                 <%= obj.brandValues?.join(" | ")%>
             </p>
             <% if(obj.brandColors.length) {%>
-                <p>
+                <p class="desc">
                     <span>Colors</span>
                     <%= obj.brandColors?.join(" | ")%>
                             </p>

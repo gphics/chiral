@@ -32,7 +32,9 @@
 
             p {
                 font-size: .9em;
-
+.desc {
+        text-transform: capitalize;
+    }
                 span {
                     display: block;
                     margin: 5px 0;

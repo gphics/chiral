@@ -1,7 +1,6 @@
 import ImgComponent from "@/utilityComponents/ImgComponent";
 import { imageType, weakBriefType } from "@/Types/types";
 
-
 function BriefDetails({
   obj,
   downloadUrl,
@@ -33,10 +32,10 @@ function BriefDetails({
     const blobUrl = URL.createObjectURL(second);
     const elem = document.createElement("a");
     elem.href = blobUrl;
-    elem.style.display = "none"
-    elem.download = `${brandName}-project.pdf`
-    elem.click()
-    document.body.appendChild(elem)
+    elem.style.display = "none";
+    elem.download = `${brandName}-project.pdf`;
+    elem.click();
+    document.body.appendChild(elem);
   }
   return (
     <div className="brief-details-components">
@@ -46,15 +45,15 @@ function BriefDetails({
           <span>Name</span>
           {brandName || ""}
         </p>
-        <p>
+        <p className="desc">
           <span>Services</span>
           {brandServices?.join(" | ") || ""}
         </p>
-        <p>
+        <p className="desc">
           <span>Values</span>
           {brandValues?.join(" | ") || ""}
         </p>
-        <p>
+        <p className="desc">
           <span>Colors</span>
           {brandColors?.join(" | ") || ""}
         </p>

@@ -8,7 +8,7 @@ Design:
     Sandy
     Silver Tadpole
     gphics Design
-
+    folksy
 Software:
     feed-master : https://feed-master-client.vercel.app/landing-page
     Track-It : https://trackit-gb3z.onrender.com/
