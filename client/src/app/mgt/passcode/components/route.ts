@@ -20,6 +20,7 @@ export async function PUT(req: NextRequest) {
     return Response.json(second)
 }
 
+// creating a passcode
 export async function POST() {
     const api = `${process.env.API_URL}/passcode/create`
     const first = await fetch(api, { cache: "no-cache" })

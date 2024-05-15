@@ -20,7 +20,6 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
     const reqObj = await req.json()
-    console.log(reqObj)
     const { key, ...rest } = reqObj
     const api = `${process.env.API_URL}/brief?key=${key}`
     console.log("I AM THE API", api, key)

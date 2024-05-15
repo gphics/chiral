@@ -1,4 +1,4 @@
-const briefs = [
+const briefStore = [
   {
     jobType: "Design",
     brandName: "gphics Design",
@@ -216,3 +216,5 @@ const briefs = [
   //   clientLocation: "",
   // },
 ];
+
+export default briefStore
