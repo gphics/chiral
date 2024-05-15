@@ -5,6 +5,8 @@ module.exports = async (briefId) => {
     const url = `${process.env.SERVER_URL}/pdf/brief?id=${briefId}`;
     const browser = await launch({ defaultViewport: null, timeout: 40000 });
     const page = await browser.newPage();
+    page.setDefaultTimeout(40000);
+    page.setDefaultNavigationTimeout(40000);
     await page.goto(url);
     await page.pdf({
       landscape: false,
