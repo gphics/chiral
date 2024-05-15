@@ -1,6 +1,6 @@
 const briefStore = [
   {
-    jobType: "Design",
+    jobType: "design",
     brandName: "gphics Design",
     brandServices: ["Graphics Design"],
     brandContact: 8165607828,
@@ -18,7 +18,7 @@ const briefStore = [
     clientLocation: "Ogun State, Nigeria",
   },
   {
-    jobType: "Design",
+    jobType: "design",
     brandName: "HiConnect",
     brandServices: ["Data Subscription"],
     brandContact: 8165607828,
@@ -36,7 +36,7 @@ const briefStore = [
     clientLocation: "Ogun State, Nigeria",
   },
   {
-    jobType: "Design",
+    jobType: "design",
     brandName: "Chiral",
     brandServices: ["Visual Identity Design", "Software Development"],
     brandContact: 8165607828,
@@ -54,7 +54,7 @@ const briefStore = [
     clientLocation: "Ogun State, Nigeria",
   },
   {
-    jobType: "Design",
+    jobType: "design",
     brandName: "King's Fashion",
     brandServices: ["Tailoring", "Clothe Design"],
     brandContact: 9133146567,
@@ -73,7 +73,7 @@ const briefStore = [
   },
   {
     brandName: "Reldrop",
-    jobType: "Design",
+    jobType: "design",
     brandServices: ["Logistics & Delivery"],
     brandContact: 0,
     brandColors: ["#011B33", "09A5DB"],
@@ -91,7 +91,7 @@ const briefStore = [
   },
   {
     brandName: "Sandy",
-    jobType: "Design",
+    jobType: "design",
     brandServices: ["Fashion Design"],
     brandContact: 0,
     brandColors: ["#EDE324", "#000000"],
@@ -108,7 +108,7 @@ const briefStore = [
     clientLocation: "N/A",
   },
   {
-    jobType: "Design",
+    jobType: "design",
     brandName: "Silver Tadpole",
     brandServices: ["Payment"],
     brandContact: 0,
@@ -138,7 +138,7 @@ const briefStore = [
     jobDescription: `We want a software that can accurately calculate and formulate feed formula using feed ingredients provided by users accurately and fast.`,
     brandVisuals: [],
     // client
-    clientContactL: 0,
+    clientContact: 0,
     clientName: "N/A",
     clientEmail: "N/A",
     clientLocation: "N/A",

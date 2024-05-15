@@ -45,8 +45,6 @@ function PasscodeComponent() {
   function inputOnChangeHandler(e: any) {
     dispatch(updatePasscodeKey(e.target.value));
   }
-
-  // 3e1ba299-57f7-44bd-819b-2ac5d1243714
   return (
     <div className="generate-passcode-component">
       {isLoading ? (

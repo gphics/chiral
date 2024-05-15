@@ -1,6 +1,6 @@
-import { projectType, urlType } from "@/Types/types";
+import { urlType } from "@/Types/types";
 import { useSelector } from "react-redux";
-import GalleryComponents from "./GalleryComponents";
+import ImgRenderer from "@/utilityComponents/ImgRenderer";
 
 function SoftwareProject() {
   const { singleProject: project } = useSelector(
@@ -61,12 +61,7 @@ function SoftwareProject() {
         )}
       </article>
       {brief?.brandVisuals.length ? (
-        <GalleryComponents
-          height={300}
-          width={300}
-          title="Brand Visuals"
-          srcs={brief.brandVisuals}
-        />
+        <ImgRenderer title="Brand Visuals" arr={brief.brandVisuals} />
       ) : (
         ""
       )}

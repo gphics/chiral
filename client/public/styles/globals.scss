@@ -6,7 +6,7 @@
 @use "./utils/filter-form-component.scss";
 @use "./pages/page-export.scss";
 @use "./mgts/mgt-export.scss";
-
+@use "./utils/img-renderer.scss";
 @font-face {
   font-family: RegularFont;
   src: url("../assets/fonts/Montserrat-Regular.ttf");
@@ -23,9 +23,8 @@
 main {
   width: 98%;
   margin: 0 auto;
-  height: calc(100vh - 235px);
+  height: calc(100vh - 240px);
   overflow-y: scroll;
-
 }
 
 .full-page {

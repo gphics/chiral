@@ -77,17 +77,21 @@ module.exports = async (req, res, next) => {
       brandValues,
       brandColors,
     });
-    const project = await projectModel.create({
-      brief: brief._id,
-      name: `${brandName} project`,
-      type: jobType,
-      status: "ongoing",
-    });
-    passcode.isLocked = true;
-    passcode.isUsed = true;
-    passcode.projectId = project._id;
-    await passcode.save();
-    return res.json({ data: { _id: brief._id }, err: null });
+    if (brief) {
+      const project = await projectModel.create({
+        brief: brief._id,
+        name: `${brandName} project`,
+        type: jobType,
+        status: "ongoing",
+      });
+      passcode.isLocked = true;
+      passcode.isUsed = true;
+      passcode.projectId = project._id;
+      const ps = await passcode.save();
+      if (ps && project) {
+        return res.json({ data: { _id: brief._id }, err: null });
+      }
+    }
   } catch (error) {
     return next(errGen(error.message));
   }

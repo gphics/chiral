@@ -19,7 +19,7 @@ function EachPasscodePage() {
   );
   async function getSinglePasscode() {
     dispatch(updateIsLoading(!false));
-    const first = await fetch(`/mgt/passcode/deps?key=${key}`);
+    const first = await fetch(`/mgt/passcode/deps?key=${key}`, {cache:"no-cache"});
     const second = await first.json();
     dispatch(updateIsLoading(false));
     if (second.err) {

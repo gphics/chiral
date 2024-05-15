@@ -1,6 +1,5 @@
-import { projectType, urlType } from "@/Types/types";
 import { useSelector } from "react-redux";
-import GalleryComponents from "./GalleryComponents";
+import ImgRenderer from "@/utilityComponents/ImgRenderer";
 
 function DesignProject() {
   const { singleProject: project } = useSelector(
@@ -35,26 +34,13 @@ function DesignProject() {
           {brief?.jobDescription}
         </p>
       </article>
-      {brief?.brandVisuals.length ? (
-        <GalleryComponents
-          height={300}
-          width={300}
-          title="Brand Visuals"
-          srcs={brief?.brandVisuals}
-        />
-      ) : (
-        ""
-      )}
+
       {designs?.length ? (
-        <GalleryComponents
-          height={300}
-          width={300}
-          title="Designs"
-          srcs={designs}
-        />
+        <ImgRenderer title="Brand Visuals" arr={brief?.brandVisuals} />
       ) : (
         ""
       )}
+      {designs?.length ? <ImgRenderer title="Designs" arr={designs} /> : ""}
     </div>
   );
 }

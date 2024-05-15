@@ -54,7 +54,7 @@ function PasscodeUpdate({ showUpdateForm }: { showUpdateForm: () => void }) {
           {arr.map((elem, index: number) => {
             return (
               <div key={index}>
-                <label htmlFor={elem.name}>isLocked</label>
+                <label htmlFor={elem.name}> {elem.name} </label>
                 <select
                   onChange={onSelectHandler}
                   name={elem.name}
