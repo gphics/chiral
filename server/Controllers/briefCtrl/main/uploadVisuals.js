@@ -31,7 +31,7 @@ module.exports = async (req, res, next) => {
     const final = result.map((item) => {
       return { public_id: item.value.public_id, url: item.value.secure_url };
     });
-    brief.brandVisuals = final;
+    brief.brandVisuals = [...brief.brandVisuals, ...final];
     await brief.save();
     res.json({ data: brief, err: null });
   } catch (error) {

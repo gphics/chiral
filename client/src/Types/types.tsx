@@ -106,6 +106,7 @@ export type weakProjectType = {
   type?: "software" | "design";
   cost?: number;
   webUrls?: urlType[];
+  webUrlArr?: any[];
   designs?: imageType[];
   deploymentPlatforms?: string[];
   techStacks?: string[];
@@ -154,6 +155,17 @@ export type mgtSliceType = {
   duplicatedPasscodeList: passcodeType[];
   singlePasscode: passcodeType;
   brief: weakBriefType;
-  pdf:pdfType | null
+  pdf: pdfType | null;
+  singleProject: weakProjectType;
 };
 
+type simpleInputType = {
+  value: string;
+  onChange?: (e: any) => void;
+  name: string;
+};
+export type compoundUrlInputType = {
+  link: simpleInputType;
+  type: simpleInputType;
+  index: number;
+};

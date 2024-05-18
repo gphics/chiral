@@ -9,6 +9,7 @@ module.exports = async (req, res, next) => {
   try {
     const { id } = req.params;
     const brief = await briefModel.findById(id);
+    return res.json({data:brief, err:null})
     if (!brief) {
       return next(errGen("brief does not exist"));
     }
@@ -19,7 +20,7 @@ module.exports = async (req, res, next) => {
         isUpdated = true;
       }
     }
-
+   
     if (isUpdated) {
       await configuredCloudinary.uploader.destroy(pdf.public_id);
     }

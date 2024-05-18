@@ -12,7 +12,8 @@ const initialState: mgtSliceType = {
     duplicatedPasscodeList: [],
     singlePasscode: { isLocked: true, isUsed: true, key: "" },
     brief: {},
-    pdf:null,
+    pdf: null,
+    singleProject: { techStacks: [], deploymentPlatforms: [], webUrlArr: [] }
 }
 
 const main = createSlice({
@@ -51,7 +52,15 @@ const main = createSlice({
             state.brief = action.payload
         },
         fillPdf(state: mgtSliceType, action) {
-            state.pdf  = action.payload
+            state.pdf = action.payload
+        },
+        fillSingleProject(state: mgtSliceType, action) {
+            state.singleProject = action.payload
+        },
+        updateSingleProject(state: mgtSliceType, action) {
+            const { name, value } = action.payload
+            // @ts-ignore
+            state.singleProject[name] = value
         }
     }
 })

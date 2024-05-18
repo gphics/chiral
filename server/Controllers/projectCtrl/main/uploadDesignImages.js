@@ -31,7 +31,7 @@ module.exports = async (req, res, next) => {
     const final = result.map((item) => {
       return { public_id: item.value.public_id, url: item.value.secure_url };
     });
-    project.designs = final;
+    project.designs = [...final,...project.designs];
     await project.save();
     res.json({ data: "images uploaded", err: null });
   } catch (error) {

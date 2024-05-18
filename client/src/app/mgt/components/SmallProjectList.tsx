@@ -39,14 +39,18 @@ function SmallProjectList({
     router.push(`/mgt/project/${_id}`);
   }
   function previewBriefOnClick() {
-    router.push(`/mgt/brief/${briefId}`)
+    router.push(`/mgt/brief/${briefId}`);
   }
   return (
     <div className="small-project-list">
       {isLoading ? <LoadingComponent /> : ""}
-      <h4> {name.length > 25 ? `${name.slice(0,24)} ...`:name} </h4>
+      <h4> {name.length > 25 ? `${name.slice(0, 24)} ...` : name} </h4>
       <small> {status} </small>
-      <LuView onClick={previewBriefOnClick} title="preview brief" className="icon preview-brief" />
+      <LuView
+        onClick={previewBriefOnClick}
+        title="preview brief"
+        className="icon preview-brief"
+      />
       <MdOutlineEditNote
         title="edit project"
         onClick={editbtnClick}

@@ -12,6 +12,7 @@ function ImgHolder({
     <div className={imgHolderClass}>
       {action ? (
         <Image
+          className="proj-img"
           onClick={action}
           src={src}
           height={height}
@@ -22,7 +23,7 @@ function ImgHolder({
       ) : (
         <Image
           priority={true}
-          src={src}
+          src={src} 
           height={height}
           width={width}
           alt={alt}

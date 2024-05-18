@@ -1,5 +1,5 @@
 import { briefType, imageType } from "@/Types/types";
-import DefaultImg from "../../public/assets/PNG/default-img.png"
+import DefaultImg from "../../public/assets/PNG/default-img.png";
 import { StaticImageData } from "next/image";
 import ImgHolder from "@/utilityComponents/ImgHolder";
 function ImgComponent({
@@ -7,13 +7,15 @@ function ImgComponent({
   designs,
   url,
   width = 150,
-  height = 150
+  height = 150,
+  onClick
 }: {
   brief?: briefType;
   url?: string;
-    designs?: imageType[] | undefined;
-    width?: number;
-  height?:number
+  designs?: imageType[] | undefined;
+  width?: number;
+    height?: number;
+  onClick?:(e:any)=>void
 }) {
   let imgSrc: StaticImageData | string = DefaultImg;
   if (url && navigator.onLine) {
@@ -31,6 +33,7 @@ function ImgComponent({
       alt="project image"
       width={width}
       height={height}
+      action={onClick}
     />
   );
 }

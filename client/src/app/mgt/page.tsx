@@ -1,5 +1,4 @@
 "use client";
-
 import { mgtSliceAction } from "@/slices/mgtSlice";
 import { projectType } from "@/Types/types";
 import FilterComponent from "@/utilityComponents/FilterComponent";
