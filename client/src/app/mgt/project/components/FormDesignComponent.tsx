@@ -28,7 +28,8 @@ function FormDesignComponent() {
         file: { file, public_id: prev.file.public_id },
       }));
     }
-  }
+  } 
+  
   function imgOnClick(public_id: string, e: any) {
     const imgs = document.querySelectorAll(".proj-img");
     // style update
