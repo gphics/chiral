@@ -1,13 +1,7 @@
 import ImgComponent from "@/utilityComponents/ImgComponent";
 import { imageType, weakBriefType } from "@/Types/types";
-
-function BriefDetails({
-  obj,
-  downloadUrl,
-}: {
-  obj: weakBriefType;
-  downloadUrl: string;
-}) {
+import { IoMdDownload } from "react-icons/io";
+function BriefDetails({ obj }: { obj: weakBriefType }) {
   const {
     brandName,
     brandServices,
@@ -26,14 +20,14 @@ function BriefDetails({
     clientEmail,
     clientLocation,
   } = obj;
-  async function createBlobUrl() {
-    const first = await fetch(downloadUrl, { cache: "no-cache" });
+  async function createBlobUrl(url: string) {
+    const first = await fetch(url, { cache: "no-cache" });
     const second = await first.blob();
     const blobUrl = URL.createObjectURL(second);
     const elem = document.createElement("a");
     elem.href = blobUrl;
     elem.style.display = "none";
-    elem.download = `${brandName}-project.pdf`;
+    elem.download = `${brandName}`;
     elem.click();
     document.body.appendChild(elem);
   }
@@ -108,14 +102,27 @@ function BriefDetails({
           <h4>Brand Visuals</h4>
           <div>
             {brandVisuals.map((elem: imageType, index: number) => {
-              return <ImgComponent key={index} url={elem.url} />;
+              return (
+                <section key={index}>
+                  <ImgComponent url={elem.url} />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      createBlobUrl(elem.url);
+                    }}
+                  >
+                    {" "}
+                    {""} <IoMdDownload className="icon" />{" "}
+                  </button>
+                </section>
+              );
             })}
           </div>
         </section>
       )}
-      <button type="button" onClick={createBlobUrl} className="download-btn">
+      {/* <button type="button" onClick={createBlobUrl} className="download-btn">
         Download
-      </button>
+      </button> */}
     </div>
   );
 }

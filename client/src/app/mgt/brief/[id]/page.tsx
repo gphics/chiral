@@ -10,10 +10,10 @@ import { toast } from "react-toastify";
 import BriefDetails from "../components/BriefDetails";
 
 function BriefPreviewPage() {
-  const { isLoading, brief , pdf} = useSelector((state: any) => state.mgtSlice);
+  const { isLoading, brief} = useSelector((state: any) => state.mgtSlice);
   const briefDetails = brief as weakBriefType;
   const dispatch = useDispatch();
-  const { updateIsLoading, fillBrief , fillPdf} = mgtSliceAction;
+  const { updateIsLoading, fillBrief} = mgtSliceAction;
   const { id } = useParams();
   async function getBrief() {
     dispatch(updateIsLoading(true));
@@ -22,14 +22,12 @@ function BriefPreviewPage() {
     dispatch(updateIsLoading(!true));
     if (second.err) {
       toast.error(second.err.message);
-      return; 
+      return;
     }
-    const {brief, pdf} = second.data
+    const brief = second.data;
     dispatch(fillBrief(brief));
-    dispatch(fillPdf(pdf))
   }
- 
-  
+
   useEffect(() => {
     getBrief();
   }, [id]);
@@ -38,8 +36,7 @@ function BriefPreviewPage() {
       {isLoading ? (
         <LoadingComponent />
       ) : briefDetails?._id ? (
-         
-        <BriefDetails downloadUrl={pdf.url} obj={briefDetails} />
+        <BriefDetails obj={briefDetails} />
       ) : (
         <h3 className="brief-nf">Brief Not Found</h3>
       )}

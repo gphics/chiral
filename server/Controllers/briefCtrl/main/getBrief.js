@@ -1,9 +1,9 @@
-const { configuredCloudinary } = require("../../../config/cloudinaryConfig");
+// const { configuredCloudinary } = require("../../../config/cloudinaryConfig");
 const errGen = require("../../../config/errGen");
 const briefModel = require("../../../Models/briefModel");
-const pdfModel = require("../../../Models/pdfModel");
-const toDate = require("../../../Utils/toDate");
-const toPdf = require("../../../Utils/toPdf");
+// const pdfModel = require("../../../Models/pdfModel");
+// const toDate = require("../../../Utils/toDate");
+// const toPdf = require("../../../Utils/toPdf");
 
 module.exports = async (req, res, next) => {
   try {
@@ -12,6 +12,8 @@ module.exports = async (req, res, next) => {
     if (!brief) {
       return next(errGen("brief does not exist"));
     }
+    return res.json({ data: brief, err: null });
+    /*
     let pdf = await pdfModel.findOne({ briefId: id });
     let isUpdated = false;
     {
@@ -36,6 +38,7 @@ module.exports = async (req, res, next) => {
     }
 
     return res.json({ data: {brief, pdf}, err: null });
+    */
   } catch (error) {
     return next(errGen(error.message));
   }
