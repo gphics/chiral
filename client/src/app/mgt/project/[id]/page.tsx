@@ -12,7 +12,7 @@ import { urlType } from "@/Types/types";
 
 function SingleProjectPage() {
   const dispatch = useDispatch();
-  const [formNumber, setForNumber] = useState(1);
+  const [formNumber, setForNumber] = useState(0);
   const {
     isLoading,
     singleProject: { type },
@@ -59,6 +59,10 @@ function SingleProjectPage() {
             ""
           ) : (
             <div className="btn-holder">
+      
+              Quas, delectus omnis nemo veniam laudantium atque magnam impedit
+              praesentium vero earum, et fugit. Qui, quam repudiandae distinctio
+              veritatis molestiae eveniet excepturi! Porro mollitia labori
               <button
                 onClick={() => {
                   setForNumber(0);

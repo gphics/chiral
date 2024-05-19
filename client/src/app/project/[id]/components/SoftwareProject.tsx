@@ -1,6 +1,7 @@
 import { urlType } from "@/Types/types";
 import { useSelector } from "react-redux";
 import ImgRenderer from "@/utilityComponents/ImgRenderer";
+import Link from "next/link";
 
 function SoftwareProject() {
   const { singleProject: project } = useSelector(
@@ -34,7 +35,7 @@ function SoftwareProject() {
           <h5 className={status}>
             {" "}
             <span>software url</span>
-            {url}{" "}
+            <Link className="link-elem" href={url}>visit site</Link>
           </h5>
         ) : (
           ""

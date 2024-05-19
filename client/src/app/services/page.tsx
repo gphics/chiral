@@ -1,9 +1,8 @@
-// "use client";
-// import briefStore from "@/briefStore";
-// import { useEffect } from "react";
+"use client";
+import briefStore from "@/briefStore";
+import { useEffect } from "react";
 
 function ServicesPage() {
-  /*
   async function addBrief() {
     const api = "/brief/components";
     const mappedPromise = briefStore.map(async (elem) => {
@@ -21,10 +20,10 @@ function ServicesPage() {
     const promiser = await Promise.allSettled(mappedPromise);
     console.log(promiser);
   }
-  useEffect(() => {
-    addBrief();
-  }, []);
-*/
+  // useEffect(() => {
+  //   addBrief();
+  // }, []);
+
   const arr: { title: string; body: string }[] = [
     {
       title: "Design",

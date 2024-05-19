@@ -200,7 +200,6 @@ function MainBriefComponent() {
     setIsVisual(true);
     dispatch(resetBrief(second.data._id));
   }
-
   return (
     <div className="main-brief-component">
       <section className="form-nav">
