@@ -35,7 +35,7 @@ function DesignProject() {
         </p>
       </article>
 
-      {designs?.length ? (
+      {brief?.brandVisuals?.length ? (
         <ImgRenderer title="Brand Visuals" arr={brief?.brandVisuals} />
       ) : (
         ""

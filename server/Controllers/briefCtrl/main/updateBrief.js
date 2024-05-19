@@ -18,7 +18,7 @@ module.exports = async (req, res, next) => {
     }
     if (jobType) {
       await projectModel.findOneAndUpdate({ brief: id }, { type: jobType });
-    }
+    } 
     return res.json({ data: { _id: brief._id }, err: null });
   } catch (error) {
     return next(errGen(error.message));

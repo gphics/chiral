@@ -33,5 +33,5 @@ export async function PUT(req: NextRequest) {
     const api = `${process.env.API_URL}/brief/${reqObj._id}`
     const first = await fetch(api, { method: "PUT", body: JSON.stringify(reqObj), headers: { "Content-Type": "application/json" } })
     const second = await first.json()
-    return Response.json({ second })
+    return Response.json(second )
 }

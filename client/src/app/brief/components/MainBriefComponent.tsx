@@ -137,7 +137,8 @@ function MainBriefComponent() {
     // checking and verification
 
     {
-      const arr = [...clientArr, ...brandArr];
+      const filt = brandArr.filter(elem => elem.name !== "brandColors")
+      const arr = [...clientArr, ...filt];
       let fieldName = "";
       const check = arr.every((elem) => {
         if (!elem.value) {
@@ -191,14 +192,15 @@ function MainBriefComponent() {
     }
     const second = await first.json();
     dispatch(updateIsLoading(!true));
-    if (second.err) {
+    const {err, data} = second
+    if (err) {
       toast.error(second.err.message);
       return;
     }
     toast.success("Operation completed. Do not refresh the page");
     toast.info("You can proceed to upload brand visuals");
     setIsVisual(true);
-    dispatch(resetBrief(second.data._id));
+    dispatch(resetBrief(data._id));
   }
   return (
     <div className="main-brief-component">

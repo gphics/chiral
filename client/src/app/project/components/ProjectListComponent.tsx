@@ -10,7 +10,7 @@ function ProjectListComponent({ arr }: { arr: projectType[] }) {
       ) : (
         <section>
           {arr.map((elem: projectType, index: number) => {
-            const { _id, name, brief, designs, status } = elem;
+            const { _id, name, brief, designs, status, type } = elem;
             return (
               <Link
                 className="each-project"
@@ -19,6 +19,7 @@ function ProjectListComponent({ arr }: { arr: projectType[] }) {
               >
                 <ImgComponent designs={designs} brief={brief} />
                 <h4> {name.length < 20 ? name : `${name.slice(0, 20)}..`} </h4>
+                <h5> {type} </h5>
                 <h5>
                   <span className={status}>
                     <RiProgress3Fill className="icon" />
